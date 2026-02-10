@@ -1,0 +1,25 @@
+﻿@model List<Enfermo>
+
+<h1>Enfermos EF Stored Procedures</h1>
+
+<table class="table table-info">
+    <thead>
+        <tr>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Fecha nacimiento</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Enfermo f in Model){
+            <tr>
+                <td>@f.Apellido</td>
+                <td>@f.Direccion</td>
+                <td>@f.FechaNacimiento.ToShortDateString()</td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
