@@ -1,6 +1,13 @@
 ﻿@model List<Enfermo>
 
 <h1>Enfermos EF Stored Procedures</h1>
+<p>
+    <a asp-controller="Enfermos"
+    asp-action="Create">
+        New Enfermo
+    </a>
+</p>
+
 
 <table class="table table-info">
     <thead>
@@ -18,6 +25,24 @@
                 <td>@f.Direccion</td>
                 <td>@f.FechaNacimiento.ToShortDateString()</td>
                 <td>
+                    <a asp-controller="Enfermos"
+                    asp-action="Details"
+                    asp-route-inscripcion="@f.Inscripcion"
+                    class="btn btn-warning">
+                        Details
+                    </a>
+                    <a asp-controller="Enfermos"
+                       asp-action="Delete"
+                       asp-route-inscripcion="@f.Inscripcion"
+                       class="btn btn-danger">
+                        Delete
+                    </a>
+                    <a asp-controller="Enfermos"
+                       asp-action="DeleteRaw"
+                       asp-route-inscripcion="@f.Inscripcion"
+                       class="btn btn-outline-danger">
+                        Delete Raw
+                    </a>
                 </td>
             </tr>
         }
